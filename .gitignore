@@ -1,2 +1,5 @@
 # Ignore rvm gemset files
 .ruby-*
+
+# Jekyll configuration
+_site/
