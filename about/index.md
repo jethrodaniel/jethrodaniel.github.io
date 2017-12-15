@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: default
 title: About Me
 permalink: /about/
 ---
+
+# About Me
 
 I'm a programmer, a CS student, and a musician, among other things. I'm
 based out of the Memphis, TN area.
