@@ -18,6 +18,12 @@ $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
 
+// Additional colors
+$monokai-dark: #272822;
+$monokai-grey: #6C6D69;
+$monokai-ash: #EBEDEF;
+$monokai-pink: #F92672;
+
 // Width of the content area
 $content-width:    800px !default;
 

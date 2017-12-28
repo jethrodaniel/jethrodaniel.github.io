@@ -2,9 +2,11 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
+  border-top: 5px solid $monokai-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
+
+  background: $monokai-ash;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -24,9 +26,16 @@
   }
 }
 
+.navbar-logo {
+  float: right;
+  margin-top: $spacing-unit / 2;
+}
+
 .site-nav {
   float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
+
+  margin-right: $spacing-unit / 2;
 
   .nav-trigger {
       display: none;
@@ -54,6 +63,8 @@
     border: 1px solid $grey-color-light;
     border-radius: 5px;
     text-align: right;
+
+    margin-right: 0;
 
     label[for="nav-trigger"] {
       display: block;
@@ -100,6 +111,60 @@
   }
 }
 
+#avatar {
+  float: left;
+
+  background-image: url('../assets/img/me.jpg');
+
+  // make a square container
+  width: $spacing-unit * 6;
+  height: $spacing-unit * 6;
+
+  // fill the container, preserving aspect ratio, and cropping to fit
+  background-size: cover;
+
+  // center the image vertically and horizontally
+  background-position: center;
+
+  // round the edges
+  border-radius: 12%;
+
+  // Add a border
+  border: ($spacing-unit / 10) solid #eef;
+
+  margin-right: $spacing-unit;
+}
+
+#cowsay {
+  margin-top: $spacing-unit / 2;
+  margin-bottom: $spacing-unit / 2;
+
+  margin-left: $spacing-unit;
+
+  float: left;
+  width: 60%;
+}
+
+@include media-query($on-palm) {
+  #cowsay {
+    float: left;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+
+    margin-left: 0;
+  }
+
+  #avatar {
+    float: left;
+    margin-left: $spacing-unit * 1.5;
+    border-radius: 50%;
+  }
+
+}
+
+#home-page-md {
+  float: left;
+}
 
 
 /**
@@ -139,17 +204,16 @@
   width:         calc(35% - (#{$spacing-unit} / 2));
 }
 
-.footer-col-5 {
+.footer-col-2 .footer-col-3 {
+  width: -webkit-calc(10% - (#{$spacing-unit} / 2));
+  width:         calc(10% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-4 {
   width: -webkit-calc(35% - (#{$spacing-unit} / 2));
   width:         calc(35% - (#{$spacing-unit} / 2));
 
   float: right;
-}
-
-.footer-col-2 .footer-col-3 {
-  width: -webkit-calc(10% - (#{$spacing-unit} / 2));
-  width:         calc(10% - (#{$spacing-unit} / 2));
-  display: inline-block;
 }
 
 @include media-query($on-laptop) {
@@ -189,6 +253,8 @@
 .post-list {
   margin-left: 0;
   list-style: none;
+
+  float: left;
 
   > li {
     margin-bottom: $spacing-unit;

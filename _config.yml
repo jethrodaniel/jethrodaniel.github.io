@@ -4,11 +4,12 @@
 # Site settings
 title: jethrodaniel
 description: >-
-  Jethro's personal website
+  A personal website
 url: "jethrodaniel.com"
 github_username:  jethrodaniel
 linkedin_username: jethrodaniel
 email: jethrodaniel@gmail.com
+name: Mark Delk
 
 # Build settings
 markdown: kramdown

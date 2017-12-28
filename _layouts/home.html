@@ -4,7 +4,16 @@ layout: default
 
 <div class="home">
 
-  {% include top-of-home-page.md %}
+  <div id="avatar"></div>
+
+  <div id="cowsay">
+    {% include top-of-home-page.md %}
+  </div>
+
+  <div id="home-page-md">
+    {% capture about %}{% include about.md %}{% endcapture %}
+    {{ about | markdownify }}
+  </div>
 
   {{ content }}
 
