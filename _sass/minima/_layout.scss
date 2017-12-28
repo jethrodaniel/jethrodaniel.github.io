@@ -132,30 +132,33 @@
   // Add a border
   border: ($spacing-unit / 10) solid #eef;
 
-  margin-right: $spacing-unit;
+  margin-right: $spacing-unit / 2;
 }
 
 #cowsay {
   margin-top: $spacing-unit / 2;
   margin-bottom: $spacing-unit / 2;
 
-  margin-left: $spacing-unit;
+  margin-left: $spacing-unit / 2;
+  margin-right: $spacing-unit / 2;
 
   float: left;
   width: 60%;
 }
 
-@include media-query($on-palm) {
+@include media-query($on-palm-horz) {
   #cowsay {
     float: left;
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width:         calc(100% - (#{$spacing-unit} / 2));
 
     margin-left: 0;
+    margin-right: 0;
   }
 
   #avatar {
     float: left;
+    margin-right: 0;
     margin-left: $spacing-unit * 1.5;
     border-radius: 50%;
   }
