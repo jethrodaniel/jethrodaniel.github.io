@@ -1,5 +1,5 @@
-# Ignore rvm gemset files
-.ruby-*
-
-# Jekyll configuration
+# Ignore Jekyll-generated files
 _site/
+
+# Ignore rvm settings
+.ruby-*
