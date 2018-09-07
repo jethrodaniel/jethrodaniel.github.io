@@ -1,17 +1,13 @@
 .App {
+  height: 100vh;
   text-align: center;
 
   color: #f1e5d4;
   font-size: 1.25em;
 
-  
-  /* Gradient from https://uigradients.com/#DeepSpace */
-  background: #000000; /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #434343, transparent);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #434343, transparent);
+  background-color: #181818;
+}
 
-  background-color: #000000;
-
+html body div#root div div.jumbotron {
+  background-color: #181818;
 }
