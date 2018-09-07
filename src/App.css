@@ -3,11 +3,12 @@
   text-align: center;
 
   color: #f1e5d4;
-  font-size: 1.25em;
-
+  
   background-color: #181818;
 }
 
 html body div#root div div.jumbotron {
+  font-size: 3em;
+  color: #f1e5d4;
   background-color: #181818;
 }

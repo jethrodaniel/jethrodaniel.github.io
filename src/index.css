@@ -1,9 +1,13 @@
+/* Use Ubuntu monospace font */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
 /* Base styles */
 html body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Ubuntu Mono', monospace;
   background: #181818;
   text-align: center;
 }
+

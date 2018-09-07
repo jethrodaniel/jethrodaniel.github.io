@@ -25,6 +25,7 @@ class App extends Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -47,17 +48,8 @@ class App extends Component {
           </Collapse>
         </Navbar>
         <Jumbotron>
-          <h1>Welcome to React</h1>
           <p>
-            <Button
-              tag="a"
-              color="success"
-              size="large"
-              href="http://reactstrap.github.io"
-              target="_blank"
-            >
-              View Reactstrap Docs
-                              </Button>
+            $ cat hello
           </p>
         </Jumbotron>
       </div>
