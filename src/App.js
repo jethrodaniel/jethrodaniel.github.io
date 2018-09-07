@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Container,
-  Row,
   Col,
-  Jumbotron,
-  Button
+  Container,
+  Navbar,
+  Row
 } from 'reactstrap';
 
 import './App.css';
 
-class App extends Component {
+import {Terminal} from './components/Terminal.js'
+
+export default class App extends Component {
   constructor(props) {
     super(props);
 
@@ -34,27 +28,19 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="md">
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-        <Jumbotron>
-          <p>
-            $ cat hello
-          </p>
-        </Jumbotron>
+        <Navbar color="dark" dark expand="md"></Navbar>
+
+        <Container fluid={true} className="h-100">
+          <Row>
+            <Col md="3" className="d-none d-lg-block"></Col>
+            <Col id="terminal">
+              <Terminal value="Hello!"/>
+            </Col>            
+            <Col md="3" className="d-none d-lg-block"></Col>
+          </Row>
+        </Container>
+
       </div>
     );
   }
 }
-
-export default App;
