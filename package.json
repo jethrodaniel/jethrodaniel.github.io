@@ -19,8 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "yarn run build; gh-pages -b master -d build",
     "serve": "yarn run build; serve -s build"
   },
   "devDependencies": {

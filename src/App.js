@@ -24,6 +24,8 @@ export default class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route path='/showme' component={() => window.location =
+             'http://jethrodaniel.com/showme'}/>
           </Switch>
         </div>
       </Router>
