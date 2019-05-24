@@ -22,20 +22,24 @@ const App = () => {
       <div>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path='/showme' component={() =>
-            window.location ='https://jethrodaniel.com/showme'
-          }/>
         </Switch>
       </div>
     </Router>
   );
 }
 
+const Header = () => {
+  return (
+    <div>
+      <Navbar color="dark" dark expand="md"/>;
+    </div>
+  );
+}
+
 const HomePage = () => {
   return (
     <div>
-      <Navbar color="dark" dark expand="md"></Navbar>
-
+      <Header/>
       <Container fluid={true} className="h-100">
         <Row>
           <Col md="3" className="d-none d-lg-block"></Col>
@@ -45,7 +49,6 @@ const HomePage = () => {
           <Col md="3" className="d-none d-lg-block"></Col>
         </Row>
       </Container>
-
     </div>
   );
 }
