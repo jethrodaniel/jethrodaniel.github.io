@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './Terminal.css';
 
 import Typing from 'react-typing-animation';
@@ -17,6 +19,9 @@ export const Terminal = () => (
       </p>
       <p>
         &nbsp; <a href={'http://basedeltazero.com'}>My Band</a>
+      </p>
+      <p>
+        &nbsp; <Link to="/resume">Resume</Link>
       </p>
       <p>^C</p>
     </Typing>
