@@ -23,11 +23,18 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path='/resume' component={ResumePage} />
+          <Route component={NoMatch} />
         </Switch>
       </div>
     </Router>
   );
 }
+
+const NoMatch = ({location}) => (
+  <div>
+    <h3>No match for <code>{location.pathname}</code></h3>
+  </div>
+);
 
 const HomePage = () => {
   return (
