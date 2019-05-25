@@ -27,3 +27,5 @@ export const Terminal = () => (
     </Typing>
   </div>
 );
+
+export default Terminal;
