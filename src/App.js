@@ -3,6 +3,7 @@ import {
   Col,
   Container,
   Navbar,
+  NavbarBrand,
   Row
 } from 'reactstrap';
 
@@ -56,6 +57,7 @@ const HomePage = () => {
 const ResumePage = () => {
   return (
     <div id="resume-page">
+      <Navbar color="light" expand="md"/>
       <Container fluid={true} className="h-100">
         <Row>
           <Col md="3" className="d-none d-lg-block"></Col>
