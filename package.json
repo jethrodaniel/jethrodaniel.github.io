@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "NODE_DEBUG=gh-pages yarn run build && yarn run gh-pages -b master -d build",
     "serve": "yarn run build; serve -s build"
