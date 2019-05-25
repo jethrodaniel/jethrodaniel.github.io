@@ -6,8 +6,6 @@ import {
   Switch
 } from 'react-router-dom';
 
-import './App.css';
-
 import Resume from './components/pages/resume/Resume.js'
 import HomePage from './components/pages/home/Home.js'
 
