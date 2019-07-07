@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+require 'rake/clean'
+
+# Append all lines from `from` to `to` with the specified indention
+def append_and_indent! from:, to:, indention:
+  File.foreach from do |line|
+    File.open(to, 'a') { |f| f << "#{' ' * indention}#{line}" }
+  end
+end
+
+CLEAN.include '*.js', '_*'
+CLOBBER.include '*.html'
+
+file 'app.js' do
+  sh 'opal --compile -I node_modules --gem opal-jquery app.rb > app.js'
+end
+
+file 'index.html' => 'app.js' do
+  sh 'cp index.haml _index.haml'
+  append_and_indent! :from => 'app.js', :to => '_index.haml', :indention => 4
+  sh 'haml _index.haml > index.html'
+end
+
+desc 'Builds the app into index.html'
+task :build => 'index.html'
+
+task :default => %i[build clean]
