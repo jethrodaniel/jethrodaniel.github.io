@@ -26,6 +26,8 @@ rake
 
 Then open `index.html` in your browser
 
+Check out the [travis file](.travis.yml) for an example setup.
+
 ## License
 
 The MIT License (MIT)
