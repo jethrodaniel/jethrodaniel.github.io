@@ -14,8 +14,8 @@ describe 'App' do
       ? :selenium_chrome
       : :selenium_chrome_headless
 
-    @parent_dir = Pathname.new(__dir__).parent
-    @index = @parent_dir + 'index.html'
+    @project_root = Pathname.new(__dir__).parent
+    @index = @project_root + 'index.html'
 
     visit "file://#{@index}"
   end
