@@ -4,7 +4,20 @@ rvm:
 
 dist: bionic
 
+before_install: |
+  # From <https://docs.brew.sh/Homebrew-on-Linux>
+  sudo apt-get install build-essential curl file git gcc
+
+  git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+  mkdir -p ~/.linuxbrew/bin
+  ln -sf ../Homebrew/bin/brew ~/.linuxbrew/bin
+  eval "$(~/.linuxbrew/bin/brew shellenv)"
+
+  brew install yarn
+
 script: |
+  eval "$(~/.linuxbrew/bin/brew shellenv)"
+  yarn
   bundle exec rake webdrivers:chromedriver:update
   xvfb-run bundle exec rake test
 
