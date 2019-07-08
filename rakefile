@@ -12,6 +12,9 @@ end
 CLEAN.include '*.js', '_*'
 CLOBBER.include '*.html'
 
+##
+# Build
+#
 file 'app.js' do
   sh 'opal --compile -I node_modules --gem opal-jquery app.rb > app.js'
 end
@@ -26,3 +29,22 @@ desc 'Builds the app into index.html'
 task :build => 'index.html'
 
 task :default => %i[build clean]
+
+##
+# Specs
+#
+require 'rake/testtask'
+
+Rake::TestTask.new :test do |t|
+  ENV['PATH'] = [ENV['PATH'], "#{Dir.home}/.webdrivers"].join ':'
+
+  t.libs << 'spec'
+  t.libs << 'lib'
+  t.test_files = FileList['spec/**/*_spec.rb']
+
+  # Supress `circular require` error messages from minitest
+  t.warning = false
+end
+
+require 'webdrivers'
+load 'webdrivers/Rakefile'
