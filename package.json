@@ -15,6 +15,7 @@
   "scripts": {
     "react-scripts": "react-scripts",
     "coffee": "coffee",
+    "cake": "cake",
     "serve": "serve -s build",
     "gh-pages": "gh-pages",
     "test": "react-scripts test --env=jsdom"
