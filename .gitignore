@@ -18,8 +18,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# start coffee conversion
-src/App.js
-src/App.test.js
-src/components/Terminal.js
-src/components/Terminal.test.js
+src/*.js
+src/components/*.js
+src/components/pages/home/*.js
+src/components/pages/resume/*.js
