@@ -21,3 +21,5 @@ yarn-error.log*
 # start coffee conversion
 src/App.js
 src/App.test.js
+src/components/Terminal.js
+src/components/Terminal.test.js
