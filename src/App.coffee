@@ -11,7 +11,7 @@ import {
   Switch
 } from 'react-router-dom'
 
-import Resume from './components/pages/resume/Resume.js'
+# import Resume from './components/pages/resume/Resume.js'
 import HomePage from './components/pages/home/Home.js'
 
 export default App = () =>
@@ -19,7 +19,7 @@ export default App = () =>
     e('div', {},
       e(Switch, {},
         e(Route, {exact: true, path: "/", component: HomePage}, null)
-        e(Route, {exact: true, path: "/resume", component: Resume}, null)
+      # e(Route, {exact: true, path: "/resume", component: Resume}, null)
         e(Route, {component: NoMatch}, null)
       )
     )

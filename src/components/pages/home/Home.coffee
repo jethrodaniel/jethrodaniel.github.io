@@ -20,7 +20,7 @@ export default HomePage = () =>
   e('div', {id: "home-page"},
     e(Navbar, {color: "dark", dark: true, expand: "md"},
       e(Container, {fluid: true, className: "h-100"},
-        e(Row, {},
+        e(Row, {className: "w-100"},
           e Col, {md: "3", className: "d-none d-lg-block"}, null
           e(Col, {id: "terminal"},
             e(Terminal, {value: "Hello!"}, null)
