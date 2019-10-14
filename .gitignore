@@ -20,3 +20,4 @@ yarn-error.log*
 
 # start coffee conversion
 src/App.js
+src/App.test.js
