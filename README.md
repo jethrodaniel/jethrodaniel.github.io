@@ -4,4 +4,4 @@
 
 Simple github pages site.
 
-<https://jethrodaniel.com>
+Visit it at <https://jethrodaniel.com>.
