@@ -1,0 +1,22 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+
+    - name: yarn install
+      run: yarn install
+
+    - name: test
+      run: yarn run cake test
+      env:
+        CI: true
