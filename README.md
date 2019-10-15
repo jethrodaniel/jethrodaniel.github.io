@@ -30,3 +30,7 @@ cake start
 # TODO: make this a cake task
 NODE_DEBUG=gh-pages yarn run gh-pages -b master -d build
 ```
+
+### license
+
+All rights reserved.
