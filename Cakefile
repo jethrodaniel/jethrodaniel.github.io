@@ -15,7 +15,6 @@ sh = (command, args...) ->
     console.log "`#{command} #{args.join ' '}`: #{if code is 0 then '✓' else 'x'}"
 
 task 'build', 'Build project from coffeescript -> js', ->
-  sh 'yarn run coffee --compile src/'
   sh 'yarn run build'
 
 task 'start', 'start react app', ->
@@ -28,3 +27,6 @@ task 'deploy', 'deploy this gh-pages site', ->
 
 task 'test', 'run the tests', ->
   sh 'yarn run test'
+
+task 'serve', 'run the local server', ->
+  sh 'yarn run serve'

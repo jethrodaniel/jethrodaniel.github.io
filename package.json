@@ -12,6 +12,7 @@
     "coffee": "coffee",
     "cake": "cake",
     "gh-pages": "gh-pages",
+    "serve": "serve dist",
     "test": "mocha --require coffeescript/register --require should 'spec/**/*.coffee'"
   },
   "dependencies": {
@@ -34,6 +35,7 @@
     "node-sass": "^4.13.1",
     "react-tools": "^0.13.3",
     "sass-loader": "^8.0.2",
+    "serve": "^11.3.0",
     "should": "^13.2.3",
     "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
