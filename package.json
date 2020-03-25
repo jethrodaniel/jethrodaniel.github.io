@@ -13,7 +13,7 @@
     "cake": "cake",
     "gh-pages": "gh-pages",
     "serve": "serve dist",
-    "test": "mocha --require coffeescript/register --require should --require esm --require ignore-styles 'spec/**/*.coffee'"
+    "test": "mocha"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",

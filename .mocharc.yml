@@ -1,0 +1,9 @@
+---
+
+spec: 'spec/**/*.coffee'
+timeout: 100000
+require:
+  - 'coffeescript/register'
+  - 'should'
+  - 'esm'
+  - 'ignore-styles'

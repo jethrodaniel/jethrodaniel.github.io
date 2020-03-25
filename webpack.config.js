@@ -28,7 +28,5 @@ module.exports = {
         use: [ 'coffee-loader' ]
       }
     ]
-  },
-  plugins: [
-  ]
+  }
 };
