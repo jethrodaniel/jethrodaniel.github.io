@@ -1,7 +1,3 @@
-###
-eslint-disable
-###
-
 import React from 'react'
 e = React.createElement
 
@@ -12,7 +8,7 @@ import {
   Row
 } from 'reactstrap'
 
-import {Terminal} from '../../Terminal.js'
+import {Terminal} from '../../terminal.coffee'
 
 import './Resume.css'
 

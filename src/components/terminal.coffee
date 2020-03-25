@@ -1,7 +1,3 @@
-###
-eslint-disable
-###
-
 import React from 'react'
 e = React.createElement
 
@@ -13,7 +9,7 @@ import {
   Row
 } from 'reactstrap'
 
-import './Terminal.css'
+import './terminal.css'
 
 import Typing from 'react-typing-animation'
 

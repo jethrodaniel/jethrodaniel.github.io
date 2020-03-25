@@ -1,9 +1,10 @@
-###
-eslint-disable
-###
-
 import React from 'react'
+import ReactDOM from 'react-dom'
+
 e = React.createElement
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './app.css'
 
 import {
   BrowserRouter as Router
@@ -11,8 +12,8 @@ import {
   Switch
 } from 'react-router-dom'
 
-# import Resume from './components/pages/resume/Resume.js'
-import HomePage from './components/pages/home/Home.js'
+# import Resume from './components/pages/resume/resume.coffee'
+import HomePage from './components/pages/home/home.coffee'
 
 export default App = () =>
   e(Router, {},
@@ -31,3 +32,4 @@ NoMatch = ({location}) => (
   )
 )
 
+ReactDOM.render e(App, {}, null), document.getElementById('root')

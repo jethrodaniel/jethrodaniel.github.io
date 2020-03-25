@@ -1,7 +1,3 @@
-###
-eslint-disable
-###
-
 import React from 'react'
 e = React.createElement
 
@@ -12,9 +8,9 @@ import {
   Row
 } from 'reactstrap'
 
-import './Home.css'
+import './home.css'
 
-import {Terminal} from '../../Terminal.js'
+import {Terminal} from '../../terminal.coffee'
 
 export default HomePage = () =>
   e('div', {id: "home-page"},

@@ -7,11 +7,11 @@ e = React.createElement;
 
 import ReactDOM from 'react-dom';
 
-import Terminal from './Terminal';
+import Resume from './resume.coffee';
 
 it('renders without crashing', () => {
   var div;
   div = document.createElement('div');
-  ReactDOM.render(e(Terminal, {}, null), div);
+  ReactDOM.render(e(Resume, {}, null), div);
   ReactDOM.unmountComponentAtNode(div); // nothing
 });
