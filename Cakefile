@@ -19,21 +19,12 @@ task 'build', 'Build project from coffeescript -> js', ->
   sh 'yarn run react-scripts build'
 
 task 'start', 'start react app', ->
-  invoke 'build'
   sh 'yarn run react-scripts start'
 
-task 'eject', 'ejects this app from create-react-app', ->
-  sh 'yarn run react-scripts eject'
-
 task 'deploy', 'deploy this gh-pages site', ->
-  invoke 'build'
+  # invoke 'build'
   # NODE_DEBUG=gh-pages
   sh 'yarn run gh-pages -b master -d build'
 
-task 'serve', 'run the site', ->
-  invoke 'build'
-  sh 'yarn run serve -s build'
-
 task 'test', 'run the tests', ->
-  invoke 'build'
-  sh 'yarn run react-scripts test --env=jsdom'
+  sh 'yarn run test'
