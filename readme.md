@@ -8,8 +8,6 @@ Visit it at <https://jethrodaniel.com>.
 
 ### About
 
-This is a simple [create-react-app](https://github.com/facebook/create-react-app), using [gh-pages](https://www.npmjs.com/package/gh-pages) for deployment.
-
 `dev` is the code branch, `master` is the static site that is deployed.
 
 ### development
