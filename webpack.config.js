@@ -5,10 +5,14 @@ const path = require('path');
 module.exports = {
   // mode: "production",
   mode: "development",
+
+  entry: "./src/App.coffee",
+
   devtool: "source-map",
-  // output: {
-    // filename: 'bundle.js'
-  // },
+  output: {
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {

@@ -16,10 +16,10 @@ sh = (command, args...) ->
 
 task 'build', 'Build project from coffeescript -> js', ->
   sh 'yarn run coffee --compile src/'
-  sh 'yarn run react-scripts build'
+  sh 'yarn run build'
 
 task 'start', 'start react app', ->
-  sh 'yarn run react-scripts start'
+  sh 'yarn run start'
 
 task 'deploy', 'deploy this gh-pages site', ->
   # invoke 'build'
