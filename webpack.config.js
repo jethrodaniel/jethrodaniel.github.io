@@ -6,7 +6,7 @@ module.exports = {
   // mode: "production",
   mode: "development",
 
-  entry: "./src/app.coffee",
+  entry: "./src/index.coffee",
 
   devtool: "source-map",
   output: {

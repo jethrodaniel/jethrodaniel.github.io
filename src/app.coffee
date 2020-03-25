@@ -1,9 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 e = React.createElement
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 import './app.css'
 
 import {
@@ -31,5 +29,3 @@ NoMatch = ({location}) => (
     e('h3', {}, "No match for <code>#{location.pathname}</code></h3>")
   )
 )
-
-ReactDOM.render e(App, {}, null), document.getElementById('root')
