@@ -1,8 +1,10 @@
 // see https://webpack.js.org/configuration/
 
-const path = require('path');
+import path from 'path'
+import WriteFilePlugin from 'write-file-webpack-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
 
-module.exports = {
+export default {
   // mode: "production",
   mode: "development",
 
@@ -10,7 +12,7 @@ module.exports = {
 
   devtool: 'source-map',
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -22,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.(s*)css$/,
-        use: ['style-loader','css-loader', 'sass-loader']
+        use: ['style-loader','css-loader']
       },
       {
         test: /\.svg$/,
@@ -33,5 +35,11 @@ module.exports = {
         use: [ 'coffee-loader' ]
       }
     ]
-  }
-};
+  },
+  plugins: [
+    new CopyPlugin([
+      { from: 'public', to: '' } // copy from /public /dist
+    ]),
+    new WriteFilePlugin()
+  ]
+}
