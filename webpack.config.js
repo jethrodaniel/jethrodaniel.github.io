@@ -8,13 +8,18 @@ module.exports = {
 
   entry: "./src/index.coffee",
 
-  devtool: "source-map",
+  devtool: 'source-map',
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
   module: {
     rules: [
+      {
+        test: /\.(js|coffee)$/,
+        use: ["source-map-loader"],
+        enforce: "pre"
+      },
       {
         test: /\.(s*)css$/,
         use: ['style-loader','css-loader', 'sass-loader']
