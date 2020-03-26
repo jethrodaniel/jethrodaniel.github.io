@@ -14,7 +14,7 @@ sh = (command, args...) ->
   process.on 'close', (code) =>
     console.log "`#{command} #{args.join ' '}`: #{if code is 0 then '✓' else 'x'}"
 
-task 'build', 'Build project from coffeescript -> js', ->
+task 'build', 'build project', ->
   sh 'yarn run build'
 
 task 'deploy', 'deploy this gh-pages site', ->
@@ -25,5 +25,5 @@ task 'deploy', 'deploy this gh-pages site', ->
 task 'test', 'run the tests', ->
   sh 'yarn run test'
 
-task 'serve', 'run the local server', ->
+task 'serve', 'run the site locally with hot-module replacement', ->
   sh 'yarn run dev-server'

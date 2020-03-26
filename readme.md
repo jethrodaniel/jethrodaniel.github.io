@@ -2,31 +2,23 @@
 
 ![](https://github.com/jethrodaniel/productivity/workflows/build/badge.svg)
 
-Simple github pages site.
+Personal website.
 
-Visit it at <https://jethrodaniel.com>.
-
-### About
+### what it do
 
 `dev` is the code branch, `master` is the static site that is deployed.
 
-### development
+### how it do
 
 ```
-# TODO: make `cake start` do everything here.
+$ cake
 
-# in one tab
-yarn run coffee --compile --watch src/
+Cakefile defines the following tasks:
 
-# in another tab
-cake start
-```
-
-### deployment
-
-```
-# TODO: make this a cake task
-NODE_DEBUG=gh-pages yarn run gh-pages -b master -d build
+cake build                # build project
+cake deploy               # deploy this gh-pages site
+cake test                 # run the tests
+cake serve                # run the site locally with hot-module replacement
 ```
 
 ### license
