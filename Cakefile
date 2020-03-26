@@ -17,9 +17,6 @@ sh = (command, args...) ->
 task 'build', 'Build project from coffeescript -> js', ->
   sh 'yarn run build'
 
-task 'start', 'start react app', ->
-  sh 'yarn run start'
-
 task 'deploy', 'deploy this gh-pages site', ->
   # invoke 'build'
   # NODE_DEBUG=gh-pages
@@ -29,4 +26,4 @@ task 'test', 'run the tests', ->
   sh 'yarn run test'
 
 task 'serve', 'run the local server', ->
-  sh 'yarn run serve'
+  sh 'yarn run dev-server'

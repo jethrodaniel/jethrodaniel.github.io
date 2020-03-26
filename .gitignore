@@ -1,8 +1,8 @@
 # dependencies
 /node_modules
 
-# production
-/dist/bundle*
+# build
+/dist
 
 # yarn logs
 yarn-debug.log*
