@@ -8,11 +8,11 @@ Personal website.
 
 This is a simple one-page app with React, using CoffeeScript, and no JSX.
 
-Death by complexity is an issue I see alot in the JS ecosystem, with projects such as [create-react-app](https://github.com/facebook/create-react-app) (which is nice, btw) generating 600-line webpack configs. Besides just being intimidating to JS beginners, that _amount_ of code feels wrong for what it's doing. This code aims to be understandable in its entirety.
+Death by complexity is an issue I see alot in the JS ecosystem, with projects such as [create-react-app](https://github.com/facebook/create-react-app) (which is nice, btw) generating 600-line webpack configs. Besides just being intimidating to JS beginners, that _amount_ of code feels wrong for what it's doing. This code (all `git ls-files`'s worth) aims to be understandable in its entirety.
 
 Some (relatively) strong opinions:
 
-- `CoffeeScript` is beautiful
+- CoffeeScript is beautiful
 - JSX is hideous
 - Webpack is pretty amazing (once you finally get the config working)
 
