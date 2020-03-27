@@ -18,6 +18,9 @@ task 'clean', 'remove all generated files', ->
   # sh 'rm -rf ./dist/*.js*' why doesn't this work? :(
   sh 'rm -f dist/bundle.js dist/bundle.js.map'
 
+task 'format', 'formats package.json' ->
+  sh 'yarn run sort-package-json'
+
 task 'build', 'build project', ->
   invoke 'clean'
   sh 'yarn run build'
