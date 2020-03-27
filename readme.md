@@ -45,6 +45,6 @@ We're using [yarn](https://classic.yarnpkg.com/en/docs/install/) here to manage 
 
 All rights reserved.
 
-I'd like to make the _code_ available under MIT, and the _content_ unlicensed, but since this is a personal website, it seems safer _legally_ to just leave ll this unlicensed. Feel free to read the code or suggest improvements. Ideally, we all help each other code better.
+I'd like to make the _code_ available under MIT, and the _content_ unlicensed, but since this is a personal website, it seems safer _legally_ to just leave all this unlicensed. Feel free to read the code or suggest improvements. Ideally, we all help each other code better.
 
 Thanks.
