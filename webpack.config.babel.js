@@ -6,13 +6,16 @@ import WriteFilePlugin from 'write-file-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 
 export default env => {
-  const isProd = () => env.production == 'production'
-  const environment = isProd ? 'production' : 'development'
+
+  const environment = env || 'development'
+  console.log(`Env: ${environment}`)
+
+  const isProd = () => env == 'production'
 
   return {
-    mode: env.production || 'development',
+    mode: environment,
     entry: "./src/index.coffee",
-    devtool: isProd ? 'none' : 'source-map',
+    devtool: isProd() ? 'none' : 'source-map',
     output: {
       path: path.join(__dirname, './dist'),
       filename: 'bundle.js'
