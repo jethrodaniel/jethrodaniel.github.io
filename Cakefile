@@ -2,16 +2,10 @@
 
 # Run a command, like Rake's sh.
 #
-# Passes args to spawn, and accepts a single string as shorthand
-#
-#   sh 'coffee', '--version'
-#   sh 'coffee --version'
-#
-sh = (command, args...) ->
-  if args.length is 0
-    [command, args...] = command.split ' '
-  process = spawn command, args, stdio: 'inherit'
-  process.on 'close', (code) =>
+sh = (command, env) ->
+  [command, args...] = command.split ' '
+  p = spawn command, args, stdio: 'inherit', env: {...process.env, ...env}
+  p.on 'close', (code) =>
     console.log "`#{command} #{args.join ' '}`: #{if code is 0 then '✓' else 'x'}"
 
 task 'clean', 'remove all generated files', ->
@@ -21,14 +15,17 @@ task 'clean', 'remove all generated files', ->
 task 'format', 'formats package.json', ->
   sh 'yarn run sort-package-json'
 
-task 'build', 'build project', ->
+option '-p', '--production', 'run webpack in production mode'
+task 'build', 'build project', (options) ->
   invoke 'clean'
-  sh 'yarn run build'
+  if options.production
+    sh "yarn run build --env production"
+  else
+    sh "yarn run build"
 
-task 'deploy', 'deploy this gh-pages site', ->
-  # invoke 'build'
-  # NODE_DEBUG=gh-pages
-  sh 'yarn run gh-pages -b master -d build'
+task 'deploy', 'deploy this gh-pages site', (options) ->
+  sh 'yarn run build -p'
+  sh 'yarn run gh-pages -b master -d dist', {NODE_DEBUG: 'gh-pages'}
 
 task 'test', 'run the tests', ->
   invoke 'build'
