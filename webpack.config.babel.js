@@ -20,6 +20,9 @@ export default env => {
       path: path.join(__dirname, './dist'),
       filename: 'bundle.js'
     },
+    devServer: {
+      historyApiFallback: true
+    },
     module: {
       rules: [
         {
