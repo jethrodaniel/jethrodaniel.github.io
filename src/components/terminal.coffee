@@ -11,40 +11,54 @@ import {
 
 import './terminal.css'
 
-import Typing from 'react-typing-animation'
+import Terminal from 'terminal-in-react'
 
 class Term extends React.Component
   constructor: (props) ->
     super props
-    @state =
-      test: 123
-
-  @defaultProps: ->
-    bar: 'baz'
+    # todo: rm _content_, place in another folder
+    @github = 'https://github.com/jethrodaniel'
+    @music = 'http://basedeltazero.com'
+    @music_listen_url = 'https://music.youtube.com/channel/UCeG7uzxUXP7_TJECGdpaz5w'
 
   render: ->
-    # e Container, {},
-    #   e 'p', {}, e('a', {href: '/resume'}, 'Resume')
-    e(Container, {},
-      e(Row, {className: 'justify-content-center'},
-        e(Col, {className: 'col-xs-12 col-sm-12 col-md-10 col-lg-8'},
-          e(Typing, {speed: 30},
-            e 'p', {}, '$ cat > intro.txt'
-            e 'p', {}, "I'm Mark Delk (aka Jethro)."
-            e 'span', {}, 'See:'
-            e('p', {},
-              e('a', {href: 'https://github.com/jethrodaniel'}, 'Github')
-            )
-            e('p', {},
-              e('a', {href: 'http://basedeltazero.com'}, 'My Band')
-            )
-            # e('p', {},
-            #   e('a', {href: '/resume'}, 'Resume')
-            # )
-            e 'span', {}, '^D'
-          )
-        )
-      )
+    e('div', {id: 'terminal'},
+      e(Terminal, {
+        style: {
+          height: "100vh"
+          width: "100vw"
+        }
+        color: 'green'
+        backgroundColor: 'black'
+        barColor: 'black'
+        allowTabs: false
+        hideTopBar: true
+        startState: 'maximised'
+        msg: """
+          Hi! I'm Mark Delk (aka jethrodaniel), and this is my site.
+
+          Quick Links:
+
+            - Github: #{@github}
+            - Music: #{@music}
+
+          Type `help` to get started
+        """
+        promptSymbol: '$'
+        descriptions: {
+          # 'resume': 'View my resume'
+          'github': 'Open my Github page'
+          'music': 'Listen to my band'
+        }
+        commands: {
+          # 'resume': () => window.location.href += 'resume'
+          # 'resume': () => window.open("#{window.location.href}resume", '_blank')
+          'github': () => window.open(@github, '_blank')
+          'music': () => window.open(@music_listen_url , '_blank')
+        }
+        commandPassThrough: (cmd) ->
+          "Command `#{cmd}` not found. See `help` for usage."
+      })
     )
 
 export default Term

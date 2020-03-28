@@ -17,18 +17,19 @@ class HomePage extends React.Component
     super props
 
   render: ->
-    e('div', {id: "home-page"},
-      e(Navbar, {color: "dark", dark: true, expand: "md"},
-        e(Container, {fluid: true, className: "h-100"},
-          e(Row, {className: "w-100"},
-            e Col, {md: "3", className: "d-none d-lg-block"}, null
-            e(Col, {id: "terminal"},
-              e(Term, {value: "Hello!"}, null)
-            )
-            e Col, {md: "3", className: "d-none d-lg-block"}, null
-          )
-        )
-      )
-    )
+    e(Term, {value: "Hello!"}, null)
+    # e('div', {id: "home-page"},
+    #   e(Navbar, {color: "dark", dark: true, expand: "md"},
+    #     e(Container, {fluid: true, className: "h-100"},
+    #       e(Row, {className: "w-100"},
+    #         e Col, {md: "2", className: "d-none d-lg-block"}, null
+    #         e(Col, {id: "terminal"},
+    #           e(Term, {value: "Hello!"}, null)
+    #         )
+    #         e Col, {md: "2", className: "d-none d-lg-block"}, null
+    #       )
+    #     )
+    #   )
+    # )
 
 export default HomePage
