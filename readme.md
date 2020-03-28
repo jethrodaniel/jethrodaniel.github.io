@@ -12,8 +12,9 @@ Death by complexity is an issue I see alot in the JS ecosystem, with projects su
 
 Some (relatively) strong opinions:
 
-- CoffeeScript is beautiful, and now es6 just seems like a pain to type
-- JSX is hideous, seriously
+- CoffeeScript is beautiful
+- ES6 is a pain to type
+- JSX is hideous
 - Webpack is pretty amazing (once you finally get the config working)
 
 ### deployment
