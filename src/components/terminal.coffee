@@ -20,6 +20,7 @@ class Term extends React.Component
     @github = 'https://github.com/jethrodaniel'
     @music = 'http://basedeltazero.com'
     @music_listen_url = 'https://music.youtube.com/channel/UCeG7uzxUXP7_TJECGdpaz5w'
+    @source_url = 'https://github.com/jethrodaniel/jethrodaniel.github.io'
 
   render: ->
     e('div', {id: 'terminal'},
@@ -49,12 +50,14 @@ class Term extends React.Component
           # 'resume': 'View my resume'
           'github': 'Open my Github page'
           'music': 'Listen to my band'
+          'source': "Browse this website's source code"
         }
         commands: {
           # 'resume': () => window.location.href += 'resume'
           # 'resume': () => window.open("#{window.location.href}resume", '_blank')
           'github': () => window.open(@github, '_blank')
           'music': () => window.open(@music_listen_url , '_blank')
+          'source': () => window.open(@source_url , '_blank')
         }
         commandPassThrough: (cmd) ->
           "Command `#{cmd}` not found. See `help` for usage."
