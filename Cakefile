@@ -4,8 +4,7 @@ exec = require('child_process').execSync
 sh = (command, env) ->
   exec command, stdio: 'inherit', env: {...process.env, ...env}
 
-task 'clean', 'remove all generated files', -> clean
-clean = ->
+task 'clean', 'remove all generated files', ->
   sh 'rm -rvf dist'
 
 task 'format', 'formats package.json', ->
