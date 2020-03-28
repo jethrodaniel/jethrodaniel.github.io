@@ -10,20 +10,25 @@ import {
 
 import './home.css'
 
-import {Terminal} from '../../terminal.coffee'
+import Term from '../../terminal.coffee'
 
-export default HomePage = () =>
-  e('div', {id: "home-page"},
-    e(Navbar, {color: "dark", dark: true, expand: "md"},
-      e(Container, {fluid: true, className: "h-100"},
-        e(Row, {className: "w-100"},
-          e Col, {md: "3", className: "d-none d-lg-block"}, null
-          e(Col, {id: "terminal"},
-            e(Terminal, {value: "Hello!"}, null)
+class HomePage extends React.Component
+  constructor: (props) ->
+    super props
+
+  render: ->
+    e('div', {id: "home-page"},
+      e(Navbar, {color: "dark", dark: true, expand: "md"},
+        e(Container, {fluid: true, className: "h-100"},
+          e(Row, {className: "w-100"},
+            e Col, {md: "3", className: "d-none d-lg-block"}, null
+            e(Col, {id: "terminal"},
+              e(Term, {value: "Hello!"}, null)
+            )
+            e Col, {md: "3", className: "d-none d-lg-block"}, null
           )
-          e Col, {md: "3", className: "d-none d-lg-block"}, null
         )
       )
     )
-  )
 
+export default HomePage

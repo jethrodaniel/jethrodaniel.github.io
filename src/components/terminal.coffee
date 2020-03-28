@@ -13,27 +13,38 @@ import './terminal.css'
 
 import Typing from 'react-typing-animation'
 
-export Terminal = () =>
-  e(Container, {},
-    e(Row, {className: 'justify-content-center'},
-      e(Col, {className: 'col-xs-12 col-sm-12 col-md-10 col-lg-8'},
-        e(Typing, {speed: 30},
-          e 'p', {}, '$ cat > intro.txt'
-          e 'p', {}, "I'm Mark Delk (aka Jethro)."
-          e 'span', {}, 'See:'
-          e('p', {},
-            e('a', {href: 'https://github.com/jethrodaniel'}, 'Github')
+class Term extends React.Component
+  constructor: (props) ->
+    super props
+    @state =
+      test: 123
+
+  @defaultProps: ->
+    bar: 'baz'
+
+  render: ->
+    # e Container, {},
+    #   e 'p', {}, e('a', {href: '/resume'}, 'Resume')
+    e(Container, {},
+      e(Row, {className: 'justify-content-center'},
+        e(Col, {className: 'col-xs-12 col-sm-12 col-md-10 col-lg-8'},
+          e(Typing, {speed: 30},
+            e 'p', {}, '$ cat > intro.txt'
+            e 'p', {}, "I'm Mark Delk (aka Jethro)."
+            e 'span', {}, 'See:'
+            e('p', {},
+              e('a', {href: 'https://github.com/jethrodaniel'}, 'Github')
+            )
+            e('p', {},
+              e('a', {href: 'http://basedeltazero.com'}, 'My Band')
+            )
+            # e('p', {},
+            #   e('a', {href: '/resume'}, 'Resume')
+            # )
+            e 'span', {}, '^D'
           )
-          e('p', {},
-            e('a', {href: 'http://basedeltazero.com'}, 'My Band')
-          )
-          # e('p', {},
-          #   e('a', {href: '/resume'}, 'Resume')
-          # )
-          e 'span', {}, '^D'
         )
       )
     )
-  )
 
-export default Terminal
+export default Term
