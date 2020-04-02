@@ -39,9 +39,9 @@ class Term extends React.Component
         hideTopBar: true
         startState: 'maximised'
         msg: """
-          Hi! I'm Mark Delk (aka jethrodaniel), and this is my site.
+          Hi! I'm Mark Delk (@jethrodaniel).
 
-          Quick Links:
+          See:
 
             - Github: #{@github}
             - Music: #{@music}
