@@ -2,7 +2,7 @@ import React from 'react'
 
 e = React.createElement
 
-import './app.css'
+import './app.scss'
 
 import {
   BrowserRouter as Router

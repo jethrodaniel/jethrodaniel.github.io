@@ -1,0 +1,15 @@
+@use "../../../colors" as c;
+
+#home-page {
+  background-color: c.$gray-darkest;
+  text-align: center;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.nav-link {
+  color: c.$purple-light;
+
+  &:hover {
+    color: c.$green-light;
+  }
+}

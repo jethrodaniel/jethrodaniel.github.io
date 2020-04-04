@@ -30,9 +30,10 @@ export default env => {
           use: ["source-map-loader"],
           enforce: "pre"
         },
+
         {
-          test: /\.(s*)css$/,
-          use: ['style-loader','css-loader']
+          test: /\.(s[ac]|c)ss$/i,
+          use: ['style-loader', 'css-loader', 'sass-loader']
         },
         {
           test: /\.svg$/,
