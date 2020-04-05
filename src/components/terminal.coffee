@@ -3,6 +3,7 @@ e = React.createElement
 
 import { Link } from 'react-router-dom'
 
+import { Site } from '../site.coffee'
 import './terminal.scss'
 
 import Terminal from 'terminal-in-react'
@@ -10,11 +11,6 @@ import Terminal from 'terminal-in-react'
 class Term extends React.Component
   constructor: (props) ->
     super props
-    # todo: rm _content_, place in another folder
-    @github = 'https://github.com/jethrodaniel'
-    @music = 'http://basedeltazero.com'
-    @music_listen_url = 'https://music.youtube.com/channel/UCeG7uzxUXP7_TJECGdpaz5w'
-    @source_url = 'https://github.com/jethrodaniel/jethrodaniel.github.io'
 
   open: (link) ->
     window.open link, '_blank', 'noopener'
@@ -33,12 +29,12 @@ class Term extends React.Component
         hideTopBar: true
         startState: 'maximised'
         msg: """
-          Hi! I'm Mark Delk (@jethrodaniel).
+          Hi! I'm #{Site.author.name} (@#{Site.author.handle}).
 
           See:
 
-            - Github: #{@github}
-            - Music: #{@music}
+            - Github: #{Site.author.github}
+            - Music: #{Site.author.music.homepage}
 
           Type `help` to get started
         """
@@ -52,9 +48,9 @@ class Term extends React.Component
         commands: {
           # 'resume': () => window.location.href += 'resume'
           # 'resume': () => window.open("#{window.location.href}resume", '_blank')
-          'github': () => this.open(@github, '_blank')
-          'music': () => this.open(@music_listen_url , '_blank')
-          'source': () => this.open(@source_url , '_blank')
+          'github': () => this.open(Site.author.github, '_blank')
+          'music': () => this.open(Site.author.music.listen , '_blank')
+          'source': () => this.open(Site.source, '_blank')
         }
         commandPassThrough: (cmd) ->
           "Command `#{cmd}` not found. See `help` for usage."

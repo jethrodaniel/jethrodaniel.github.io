@@ -13,6 +13,8 @@ import {
 import Resume from './components/pages/resume/resume.coffee'
 import HomePage from './components/pages/home/home.coffee'
 
+import { ThemeProvider } from "@material-ui/styles"
+
 class App extends React.Component
   constructor: (props) ->
     super props

@@ -17,13 +17,11 @@ import CodeIcon from '@material-ui/icons/CodeOutlined'
 import DescriptionIcon from '@material-ui/icons/DescriptionOutlined'
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd'
 
-
 import './home.scss'
 
 import Term from '../../terminal.coffee'
 
 class HomePage extends React.Component
-
  constructor: (props) ->
     super props
     @THEME = createMuiTheme(
@@ -32,11 +30,9 @@ class HomePage extends React.Component
       }
     )
     @TABS = [
-      # e(Typography, {style: {marginTop: 50}}, "terminal")
-
       e(Term, {}, null)
-      e(Typography, {style: {marginTop: 50}}, "blog")
-      e(Typography, {style: {marginTop: 50}}, "resume")
+      e(Typography, {style: {marginTop: 50}}, "todo: blog")
+      e(Typography, {style: {marginTop: 50}}, "todo: resume")
     ]
     @state =
       navbar_collapsed: false

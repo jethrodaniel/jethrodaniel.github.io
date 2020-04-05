@@ -12,8 +12,9 @@ Death by complexity is an issue I see alot in the JS ecosystem, with projects su
 
 Some (relatively) strong opinions:
 
-- CoffeeScript and Sass are beautiful
-- ES6, CSS, and JSX are hideous
+- CoffeeScript and Sass are beautiful (but the coffee has its [rotten parts](https://donatstudios.com/CoffeeScript-Madness)
+- ES6 is okay, but a pain to type
+- pre-ES6, CSS, and JSX are hideous
 - Webpack is pretty amazing (once you finally get the config working)
 
 ### deployment
@@ -43,13 +44,11 @@ We're using [yarn](https://classic.yarnpkg.com/en/docs/install/) here to manage 
 
 ### license
 
-All rights reserved.
+~~All rights reserved.~~
 
-I'd like to make the _code_ available under MIT, and the _content_ unlicensed, but since this is a personal website, it seems safer _legally_ to just leave all this unlicensed. Feel free to read the code or suggest improvements. Ideally, we all help each other code better.
+~~I'd like to make the _code_ available under MIT, and the _content_ unlicensed, but since this is a personal website, it seems safer _legally_ to just leave all this unlicensed. Feel free to read the code or suggest improvements. Ideally, we all help each other code better.~~
 
-Thanks.
-
-TODO: move _content_ into yaml files, then MIT license the code, but keep the yaml file unlicensed
+Only one file is unlicensed, [site.coffee](src/site.coffee). The rest is MIT-licensed.
 
 ### resources
 
