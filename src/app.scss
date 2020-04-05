@@ -5,6 +5,12 @@ $font-family: 'Ubuntu Mono';
 // base styles
 html body {
   font-family: $font-family;
+
+  // make sure this takes up the whole page, with no scrollbars
+  width: 100vw;
   height: 100vh;
+  padding: 0px 0px 0px 0px !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
 }
 

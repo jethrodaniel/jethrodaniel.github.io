@@ -6,10 +6,16 @@
   font-family: 'Ubuntu Mono', monospace;
 }
 
-.nav-link {
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+  background-color: c.$gray-darker;
   color: c.$purple-light;
 
   &:hover {
-    color: c.$green-light;
+    color: c.$green-light !important;
   }
+
+  &.active {
+    background-color: c.$gray-darker !important;
+  }
+
 }

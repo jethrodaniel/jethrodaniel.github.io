@@ -3,13 +3,7 @@ e = React.createElement
 
 import { Link } from 'react-router-dom'
 
-import {
-  Col,
-  Container,
-  Row
-} from 'reactstrap'
-
-import './terminal.css'
+import './terminal.scss'
 
 import Terminal from 'terminal-in-react'
 

@@ -1,35 +1,64 @@
 import React from 'react'
 e = React.createElement
 
-import {
-  Col,
-  Container,
-  Navbar,
-  Row
-} from 'reactstrap'
+import { ThemeProvider } from "@material-ui/styles"
 
-import './home.css'
+import {
+  AppBar
+  CssBaseline
+  IconButton
+  Tab
+  Tabs
+  Typography
+  createMuiTheme
+} from "@material-ui/core"
+
+import CodeIcon from '@material-ui/icons/CodeOutlined'
+import DescriptionIcon from '@material-ui/icons/DescriptionOutlined'
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd'
+
+
+import './home.scss'
 
 import Term from '../../terminal.coffee'
 
 class HomePage extends React.Component
-  constructor: (props) ->
+
+ constructor: (props) ->
     super props
+    @THEME = createMuiTheme(
+      palette: {
+        type: "dark"
+      }
+    )
+    @TABS = [
+      # e(Typography, {style: {marginTop: 50}}, "terminal")
+
+      e(Term, {}, null)
+      e(Typography, {style: {marginTop: 50}}, "blog")
+      e(Typography, {style: {marginTop: 50}}, "resume")
+    ]
+    @state =
+      navbar_collapsed: false
+      current_tab: 1
+
+  toggleNav: ->
+    this.setState({navbar_collapsed: !@state.navbar_collapsed})
+
+  setTab: (n) ->
+    this.setState({current_tab: n})
 
   render: ->
-    e(Term, {value: "Hello!"}, null)
-    # e('div', {id: "home-page"},
-    #   e(Navbar, {color: "dark", dark: true, expand: "md"},
-    #     e(Container, {fluid: true, className: "h-100"},
-    #       e(Row, {className: "w-100"},
-    #         e Col, {md: "2", className: "d-none d-lg-block"}, null
-    #         e(Col, {id: "terminal"},
-    #           e(Term, {value: "Hello!"}, null)
-    #         )
-    #         e Col, {md: "2", className: "d-none d-lg-block"}, null
-    #       )
-    #     )
-    #   )
-    # )
+    e(ThemeProvider, {theme: @THEME},
+      e(CssBaseline, {})
+      e(AppBar, {color: "inherit", role: "navigation"},
+        e(Tabs, {value: @state.current_tab, variant: "fullWidth", onChange: (e, v) => @setTab(v)},
+          e(Tab, {value: 1, icon: e(CodeIcon, {}, null)}, null)
+          e(Tab, {value: 2, icon: e(DescriptionIcon, {}, null)}, null)
+          e(Tab, {value: 3, icon: e(AssignmentIndIcon, {}, null)}, null)
+        )
+      )
+      @TABS[@state.current_tab - 1]
+    )
 
 export default HomePage
