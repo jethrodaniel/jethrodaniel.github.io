@@ -31,8 +31,8 @@ class HomePage extends React.Component
     )
     @TABS = [
       e(Term, {}, null)
-      e(Typography, {style: {marginTop: 50}}, "todo: blog")
-      e(Typography, {style: {marginTop: 50}}, "todo: resume")
+      e(Typography, {style: {marginTop: "3.5em"}}, "todo: blog")
+      e(Typography, {style: {marginTop: "3.5em"}}, "todo: resume")
     ]
     @state =
       navbar_collapsed: false

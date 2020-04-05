@@ -22,7 +22,8 @@ class Term extends React.Component
           height: "100vh"
           width: "100vw"
         }
-        color: 'green'
+        color: 'white'
+        prompt: 'white'
         backgroundColor: 'black'
         barColor: 'black'
         allowTabs: false
@@ -46,8 +47,6 @@ class Term extends React.Component
           'source': "Browse this website's source code"
         }
         commands: {
-          # 'resume': () => window.location.href += 'resume'
-          # 'resume': () => window.open("#{window.location.href}resume", '_blank')
           'github': () => this.open(Site.author.github, '_blank')
           'music': () => this.open(Site.author.music.listen , '_blank')
           'source': () => this.open(Site.source, '_blank')
