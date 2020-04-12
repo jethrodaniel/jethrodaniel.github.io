@@ -1,8 +1,6 @@
 import React from 'react'
 e = React.createElement
 
-import { Link } from 'react-router-dom'
-
 class HomePage extends React.Component
   constructor: (props) ->
     super props
@@ -12,7 +10,7 @@ class HomePage extends React.Component
     e('div', {},
       e('p', {}, "Hi, i'm jethrodaniel.")
       e('p', {}, "This website's content is social distancing right now.")
-      e(Link, {to: url}, url)
+      e('a', {href: url}, url)
     )
 
 export default HomePage
