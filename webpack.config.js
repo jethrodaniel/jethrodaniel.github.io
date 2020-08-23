@@ -1,12 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CnameWebpackPlugin = require('cname-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 var env = "development";
 
 module.exports = {
   mode: env,
-  entry: path.join(__dirname, "src", "index.js"),
+  entry: path.join(__dirname, "src", "main.js"),
   output: {
     path: path.join(__dirname, "build"),
     filename: "bundle.js"

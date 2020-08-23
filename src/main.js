@@ -3,6 +3,6 @@ import ReactDOM from "react-dom";
 import App from "./components/app";
 const e = React.createElement;
 
-import "./index.css"
+import "./main.css"
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(e(App), document.getElementById("app"));
