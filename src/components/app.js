@@ -2,24 +2,26 @@ import React, {useState, useEffect} from "react"
 const e = React.createElement;
 
 import {
-  Button,
   Container,
   Divider,
   Grid,
   Header,
-  Icon,
   Image,
   List,
-  Menu,
   Segment,
-  Sidebar,
-  Visibility,
 } from 'semantic-ui-react'
 // import "semantic-ui-css/semantic.min.css";
 import "semantic-ui-css/components/header.min.css"
 import "semantic-ui-css/components/container.min.css"
 import "semantic-ui-css/components/grid.min.css"
 import "semantic-ui-css/components/list.min.css"
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import "./app.css"
 
@@ -33,26 +35,41 @@ const lines = [
 
 const SiteHeader = () => {
   return (
-    e(Header, {id: "title", className: "inverted"},
-      e('a', {
-        className: "button-line",
-        href: "https://github.com/jethrodaniel",
-        target: "_blank"
-      }, "@jethrodaniel")
+    e('nav', null,
+      e(List, {horizontal: true},
+        e(List.Item, null,
+          e(Header, {id: "title", className: "link", inverted: true},
+            e(Link, {to: "/", className: "nav-link link"}, "~")
+          )
+        ),
+        e(List.Item, null,
+          // e(Link, {to: "resume", className: "nav-link link"}, "resume")
+        ),
+        e(List.Item, null,
+          e('a', {
+            className: "nav-link link",
+            href: "https://github.com/jethrodaniel",
+            target: "_blank"
+          }, "github")
+        )
+      ),
+      e(Segment, null, e(Divider, {id: "nav-line"})),
     )
   );
 }
 
-const Content = () => {
+const MainContent = () => {
   return (
-    e(Grid.Row, null, [
-      e(Grid.Column, {width: 8},
-        e(Container, {textAlign: "center"}, "wpw")
-      ),
-      e(Grid.Column, {width: 8},
-        e(Container, {textAlign: "center"}, "wpw")
-      )
-    ])
+    e(Grid, null,
+      e(Grid.Row, {horizontal: true}, [
+        e(Grid.Column, {width: 1},
+          e(Container, {textAlign: "center"}, "wpw")
+        ),
+        e(Grid.Column, null,
+          e(Container, {textAlign: "center"}, "wpw")
+        )
+      ])
+    )
   );
 }
 
@@ -66,20 +83,49 @@ const SiteBanner = () => {
           )
         )
       ),
-      // Content()
+      e(Grid.Row, null,
+        e(Grid.Column, null, e(Divider, {inverted: true}))
+      ),
     )
   );
 }
 
-const Index = () => {
+const Resume = () => {
   return (
-    e(Container, {id: "main"},
-      e(Container, null, [
-        SiteHeader(),
-        SiteBanner()
-      ])
+    e(Container, {id: "resume"},
+      e(Container, null,
+        e('p', null, "TODO: resume goes here")
+      )
     )
   );
 };
 
-export default Index;
+
+const Index = () => {
+  return (
+    e(Container, null, [
+      SiteBanner(),
+      // MainContent()
+    ])
+  );
+};
+
+const App = () => {
+  return (
+    e(Router, null,
+      e(Container, {id: "main"},
+        SiteHeader(),
+      ),
+      e(Switch, null,
+        e(Route, {path: "/resume"},
+          Resume()
+        ),
+        e(Route, {path: "/"},
+          Index()
+        )
+      )
+    )
+  );
+};
+
+export default App;

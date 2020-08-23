@@ -1,5 +1,18 @@
 #title {
-  /* text-align: center; */
   font-size: 1.75em;
-  padding-top: 0.5em;
+}
+
+.nav-link {
+  font-size: 1.5em;
+}
+
+.link {
+  text-decoration: none !important;
+}
+
+#nav-line {
+  height: 0.1em;
+  background-color: blueviolet;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }

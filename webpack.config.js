@@ -9,7 +9,7 @@ module.exports = {
   mode: env,
   entry: path.join(__dirname, "src", "main.js"),
   output: {
-    path: path.join(__dirname, "build"),
+    path: path.join(__dirname, "dist"),
     filename: "bundle.js"
   },
   module: {
@@ -36,10 +36,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: path.join(__dirname, "public", "index.html")
-    }),
+    ...["index.html", "404.html"].map(f =>
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        template: path.join(__dirname, "public", "index.html")
+      })
+    ),
     new CnameWebpackPlugin({
       domain: 'jethrodaniel.com',
     }),
