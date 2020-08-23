@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CnameWebpackPlugin = require('cname-webpack-plugin');
 
 var env = "development";
 
@@ -37,6 +38,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.join(__dirname, "public", "index.html")
-    })
+    }),
+    new CnameWebpackPlugin({
+      domain: 'jethrodaniel.com',
+    }),
   ]
 };
