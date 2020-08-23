@@ -1,6 +1,6 @@
 {
   "name": "jethrodaniel.github.io",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "description": "personal website",
   "homepage": "https://jethrodaniel.com",
@@ -8,61 +8,34 @@
   "license": "UNLICENSED",
   "author": "Mark Delk <jethrodaniel@gmail.com>",
   "scripts": {
-    "build": "webpack",
-    "cake": "cake",
-    "coffee": "coffee",
-    "dev-server": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --open",
+    "start": "webpack --mode development",
     "gh-pages": "gh-pages",
     "test": "mocha"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/register": "^7.9.0",
-    "@material-ui/core": "^4.9.9",
-    "@material-ui/icons": "^4.9.1",
-    "@svgr/webpack": "^5.3.0",
-    "@testing-library/react": "^10.0.1",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@svgr/webpack": "^5.4.0",
     "babel-loader": "^8.1.0",
-    "babel-runtime": "^6.26.0",
-    "bootstrap": "^4.4.1",
-    "coffee-loader": "^0.9.0",
-    "coffeescript": "^2.4.1",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.4.2",
-    "esm": "^3.2.25",
+    "css-loader": "^4.2.1",
     "file-loader": "^6.0.0",
-    "gh-pages": "^2.1.1",
-    "hoist-non-react-statics": "^3.3.2",
-    "ignore-styles": "^5.0.1",
-    "mocha": "^7.1.1",
-    "mocha-jsdom": "^2.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.10.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
-    "react-tools": "^0.13.3",
-    "react-typing-animation": "^1.6.2",
-    "sass": "^1.26.3",
-    "sass-loader": "^8.0.2",
-    "should": "^13.2.3",
-    "source-map-loader": "^0.2.4",
-    "style-loader": "^1.1.3",
-    "terminal-in-react": "^4.3.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "write-file-webpack-plugin": "^4.5.1"
+    "react-semantic-ui-datepickers": "^2.9.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.2.1"
   }
 }

@@ -2,54 +2,20 @@
 
 ![](https://github.com/jethrodaniel/productivity/workflows/build/badge.svg)
 
-Personal website.
+- [yarn setup](https://classic.yarnpkg.com/en/docs/install/#centos-stable)
 
-### about
-
-This is a simple one-page app with React, using CoffeeScript, and no JSX.
-
-Death by complexity is an issue I see alot in the JS ecosystem, with projects such as [create-react-app](https://github.com/facebook/create-react-app) (which is nice, btw) generating 600-line webpack configs. Besides just being intimidating to JS beginners, that _amount_ of code feels wrong for what it's doing. This code (all `git ls-files`'s worth) aims to be understandable in its entirety.
-
-Some (relatively) strong opinions:
-
-- CoffeeScript and Sass are beautiful (but the coffee has its [rotten parts](https://donatstudios.com/CoffeeScript-Madness)
-- ES6 is okay, but a pain to type
-- pre-ES6, CSS, and JSX are hideous
-- Webpack is pretty amazing (once you finally get the config working)
-
-### deployment
-
-This site is deployed as a simple static site, using [Github pages](https://pages.github.com/).
-
-Branch `dev` is the code branch, `master` is the static site that is deployed when you run `cake deploy`.
-
-### development
-
-See the cakefile
-
-```
-$ cake
-
-Cakefile defines the following tasks:
-
-cake build                # build project
-cake deploy               # deploy this gh-pages site
-cake test                 # run the tests
-cake serve                # run the site locally with hot-module replacement
+```makefile
+# makefile
+yarn:
+	curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+	curl --silent --location https://rpm.nodesource.com/setup_12.x > setup_node.sh
+	bash setup_node.sh
 ```
 
-In general, `cake serve`, then start coding.
-
-We're using [yarn](https://classic.yarnpkg.com/en/docs/install/) here to manage dependencies.
-
-### license
-
-~~All rights reserved.~~
-
-~~I'd like to make the _code_ available under MIT, and the _content_ unlicensed, but since this is a personal website, it seems safer _legally_ to just leave all this unlicensed. Feel free to read the code or suggest improvements. Ideally, we all help each other code better.~~
-
-Only two files are unlicensed, [site.coffee](src/site.coffee), and [CNAME](public/CNAME). The rest is MIT-licensed.
-
-### resources
-
-- a nice sass tutorial: https://css-tricks.com/introducing-sass-modules/
+```
+yarn init
+yarn add react react-dom react-semantic-ui-datepickers semantic-ui-react semantic-ui-css
+yarn add --dev webpack webpack-cli
+yarn add --dev @babel/core @babel/preset-env @babel/preset-react babel-loader
+yarn add --dev html-webpack-plugin css-loader sass-loader node-sass file-loader
+```

@@ -3,6 +3,7 @@
 
 # build
 /dist
+/build
 
 # yarn logs
 yarn-debug.log*
