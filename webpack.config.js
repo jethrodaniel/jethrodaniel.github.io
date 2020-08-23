@@ -42,5 +42,6 @@ module.exports = {
     new CnameWebpackPlugin({
       domain: 'jethrodaniel.com',
     }),
+    new CleanWebpackPlugin(),
   ]
 };
