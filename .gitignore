@@ -7,3 +7,5 @@
 # yarn logs
 yarn-debug.log*
 yarn-error.log*
+
+config/site.js

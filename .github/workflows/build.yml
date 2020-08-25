@@ -17,6 +17,6 @@ jobs:
       run: yarn install
 
     - name: test
-      run: yarn run cake test
+      run: yarn run test
       env:
         CI: true

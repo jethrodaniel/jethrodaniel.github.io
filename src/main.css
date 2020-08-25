@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html body {
   font-family: 'Ubuntu Mono';
   background-color: black;
   color: green;
+}
+
+.mono {
+  font-family: 'Ubuntu Mono';
+}
+
+.roboto {
+  font-family: 'Roboto';
 }

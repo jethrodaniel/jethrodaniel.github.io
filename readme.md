@@ -2,6 +2,8 @@
 
 ![](https://github.com/jethrodaniel/productivity/workflows/build/badge.svg)
 
+## setup
+
 - [yarn setup](https://classic.yarnpkg.com/en/docs/install/#centos-stable)
 
 ```makefile
@@ -18,4 +20,13 @@ yarn add react react-dom react-semantic-ui-datepickers semantic-ui-react semanti
 yarn add --dev webpack webpack-cli
 yarn add --dev @babel/core @babel/preset-env @babel/preset-react babel-loader
 yarn add --dev html-webpack-plugin css-loader sass-loader node-sass file-loader
+```
+
+## linter
+
+https://rderik.com/blog/vim-use-eslint-via-ale/
+
+```
+yarn add -D eslint
+./node_modules/.bin/eslint --init
 ```

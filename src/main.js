@@ -1,8 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/app";
-const e = React.createElement;
+import {render} from "react-dom";
+import {createElement as e} from "react";
+// import ReactPDF from "@react-pdf/renderer";
 
-import "./main.css"
+import "./main.css";
+import App from "./app";
+import Resume from "./pages/resume";
 
-ReactDOM.render(e(App), document.getElementById("app"));
+// ReactPDF.render(Resume, "output.pdf");
+render(e(App), document.getElementById("app"));
