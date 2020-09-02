@@ -101,7 +101,7 @@ const App = () => (
   e(Router, null,
     e(Container, {id: "main"}, SiteHeader()),
     e(Switch, null,
-      e(Route, {path: "/resume"}, Resume()),
+      // e(Route, {path: "/resume"}, Resume()),
       e(Route, {path: "/"}, Index())
     )
   )
