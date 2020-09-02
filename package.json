@@ -11,7 +11,7 @@
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --open",
     "start": "webpack --mode development",
-    "deploy": "NODE_DEBUG=gh-pages yarn run gh-pages -d dist -b master",
+    "deploy": "webpack --mode production && NODE_DEBUG=gh-pages yarn run gh-pages -d dist -b master",
     "test": "yarn run jest --test-match '**/*spec/*.js'",
     "lint": "eslint",
     "fix": "yarn run lint --fix src/**/*.js .eslintrc.js package.json"
