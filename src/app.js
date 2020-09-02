@@ -24,14 +24,6 @@ import {
 import Resume from "./pages/resume";
 import "./app.css";
 
-const lines = [
-  "$ sudo rm -rf --no-preserve-root /",
-  "We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things:",
-  "#1) Respect the privacy of others.",
-  "#2) Think before you type.",
-  "#3) With great power comes great responsibility."
-];
-
 function link(to, text) {
   return (
     e("a", {
@@ -76,6 +68,13 @@ const MainContent = () => (
   )
 );
 
+const lines = [
+  "We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things:",
+  "#1) Respect the privacy of others.",
+  "#2) Think before you type.",
+  "#3) With great power comes great responsibility."
+];
+
 const SiteBanner = () => (
   e(Grid, {divided: "vertically"},
     e(Grid.Row, null,
@@ -94,7 +93,7 @@ const SiteBanner = () => (
 const Index = () => (
   e(Container, null,
     SiteBanner(),
-    MainContent()
+    // MainContent()
   )
 );
 

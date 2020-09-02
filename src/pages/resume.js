@@ -33,11 +33,8 @@ import { createGlobalState } from "react-hooks-global-state";
 
 const styles = {
   pdf_viewer: {
-    // width: "210mm",
-    // height: "297mm",
-    width: "80%",
+    width: "100%",
     height: "100vh",
-    marginLeft: "10%",
   },
   page: {
     margin: "10pt",
