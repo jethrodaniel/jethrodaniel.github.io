@@ -45,9 +45,9 @@ const SiteHeader = () => (
           e(Link, {to: "/", className: "nav-link link"}, "~")
         )
       ),
-      e(List.Item, null,
-        e(Link, {to: "resume", className: "nav-link link"}, "resume")
-      ),
+      // e(List.Item, null,
+      //   e(Link, {to: "resume", className: "nav-link link"}, "resume")
+      // ),
       e(List.Item, null, GithubProfileLink),
       e(List.Item, null, GithubSourceLink)
     ),
