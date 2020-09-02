@@ -23,12 +23,18 @@ import robotoItalic from "../fonts/roboto/Roboto-Italic.ttf";
   ["Roboto Italic", robotoItalic],
 ].forEach(([name, font]) => Font.register({family: name, src: font}));
 
-import "./resume.css";
 import {hr} from "./react-pdf-utils/line";
 
 import Config from "Config/site";
 
 const styles = {
+  pdf_viewer: {
+    // width: "210mm",
+    // height: "297mm",
+    width: "80%",
+    height: "100vh",
+    marginLeft: "10%",
+  },
   page: {
     margin: "10pt",
     padding: "10pt",
@@ -261,6 +267,6 @@ const ResumeContent = () => (
 );
 
 // TODO: add PDFDownloadLink
-const Resume = () => e(PDFViewer, {id: "resume"}, e(ResumeContent));
+const Resume = () => e(PDFViewer, {style: styles.pdf_viewer}, e(ResumeContent));
 
 export default Resume;
