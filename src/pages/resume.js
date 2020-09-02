@@ -136,7 +136,7 @@ const headerName = (name) => e(Text, {style: styles.header.top}, name);
 const headerItem = (item) => e(Text, {style: styles.header.bottom}, item);
 
 const ResumeHeader = () => (
-  e(View, {style: styles.header.container},
+  e(View, {id: "header", style: styles.header.container},
     headerName(Config.name()),
     e(View, null,
       headerItem(Config.email),

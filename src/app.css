@@ -1,9 +1,20 @@
+/* https://marketplace.visualstudio.com/items?itemName=SuperPaintman.monokai-extended */
+
+html body {
+  font-family: 'Ubuntu Mono';
+  background-color: black;
+  /* color: #f8f8f2; /1* white *1/ */
+  color: #66d9ef; /* blue */
+
+}
+
 #title {
   font-size: 1.75em;
 }
 
 .nav-link {
   font-size: 1.5em;
+  color: #a6e22e; /* green */
 }
 
 .link {
@@ -12,7 +23,7 @@
 
 #nav-line {
   height: 0.1em;
-  background-color: blueviolet;
+  background-color: #ae81ff; /* purple */
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
