@@ -1,4 +1,4 @@
-import {createElement as e, useState} from 'react';
+import {createElement as e, useState} from "react";
 
 import {
   Document,
@@ -28,6 +28,8 @@ import robotoItalic from "../fonts/roboto/Roboto-Italic.ttf";
 import {hr} from "./react-pdf-utils/line";
 
 import Config from "Config/site";
+
+import { createGlobalState } from "react-hooks-global-state";
 
 const styles = {
   pdf_viewer: {
@@ -119,6 +121,14 @@ const styles = {
     }
   }
 };
+
+const a4_styles = {...styles,
+  pdf_viewer: {
+    width: "210mm",
+    height: "297mm",
+  }
+};
+const { useGlobalState } = createGlobalState({style: styles});
 
 import List, {Item} from "./react-pdf-utils/list";
 
@@ -269,22 +279,24 @@ const ResumeContent = () => (
 );
 
 // TODO: add PDFDownloadLink
-// const Resume = () => (
 function Resume() {
-  // const [a4, setA4] = useState(false);
-  const [text, setText] = useState("wow");
+  const [style, setStyle] = useGlobalState("style");
+
+  const a4 = () => style === a4_styles;
 
   return (
     e(Container, null,
       e(Grid, {divided: "horizontally"},
         e(Grid.Row, null,
           e(Grid.Column, null,
-            e("button", {onClick: () => setText(text + "a")}, text)
+            e("button", {onClick: () => setStyle(a4() ? styles : a4_styles)},
+              (a4() ? "Switch to full-size" : "Switch to A4 paper size")
+            )
           )
         ),
         e(Grid.Row, null,
           e(Grid.Column, null,
-            e(PDFViewer, {style: styles.pdf_viewer}, e(ResumeContent))
+            e(PDFViewer, {style: style.pdf_viewer}, e(ResumeContent))
           )
         )
       )
