@@ -1,4 +1,4 @@
-import {createElement as e} from "react";
+import {createElement as e, useState} from 'react';
 
 import {
   Document,
@@ -8,6 +8,8 @@ import {
   Text,
   View,
 } from "@react-pdf/renderer";
+
+import { Container, Grid } from "semantic-ui-react";
 
 import roboto       from "../fonts/roboto/Roboto-Regular.ttf";
 import mono         from "../fonts/roboto/RobotoMono-Regular.ttf";
@@ -267,6 +269,27 @@ const ResumeContent = () => (
 );
 
 // TODO: add PDFDownloadLink
-const Resume = () => e(PDFViewer, {style: styles.pdf_viewer}, e(ResumeContent));
+// const Resume = () => (
+function Resume() {
+  // const [a4, setA4] = useState(false);
+  const [text, setText] = useState("wow");
+
+  return (
+    e(Container, null,
+      e(Grid, {divided: "horizontally"},
+        e(Grid.Row, null,
+          e(Grid.Column, null,
+            e("button", {onClick: () => setText(text + "a")}, text)
+          )
+        ),
+        e(Grid.Row, null,
+          e(Grid.Column, null,
+            e(PDFViewer, {style: styles.pdf_viewer}, e(ResumeContent))
+          )
+        )
+      )
+    )
+  );
+}
 
 export default Resume;
