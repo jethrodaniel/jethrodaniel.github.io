@@ -26,8 +26,7 @@ import robotoItalic from "../fonts/roboto/Roboto-Italic.ttf";
 import "./resume.css";
 import {hr} from "./react-pdf-utils/line";
 
-// import Config from "Config/site";
-import Config from "Config/site.example";
+import Config from "Config/site";
 
 const styles = {
   page: {
